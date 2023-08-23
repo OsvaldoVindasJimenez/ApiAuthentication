@@ -7,9 +7,6 @@ namespace WebApiAuthentication.Models
 {
     public class UserService
     {
-        private const string JsonFilePath = "users.json";
-
-
         public User user = new User();
         public User GetUsers()
         {
@@ -19,17 +16,15 @@ namespace WebApiAuthentication.Models
             return user;
         }
 
-       
-
         public User Authenticate(string username, string password)
-        {
+    {
 
-            var users = GetUsers();
-            if(users != null || user.Username == username && user.Password == password)
-            {
-                return users;
-            }
-            return null;
+        var users = GetUsers();
+        if (users != null || user.Username == username && user.Password == password)
+        {
+            return users;
         }
+        return null;
     }
+}
 }
